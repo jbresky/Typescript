@@ -8,8 +8,8 @@ const parseArguments = (args): Array<number> => {
     if(args.length !== 4) throw new Error('Wrong number of arguments')
     // posición uno y cero corresponden a la compilacion de ts-node y la ejecucion del archivo multiplier respectivamente
 
-    const firstNumber = Number(process.argv[2])
-    const secondNumber = Number(process.argv[3])
+    const firstNumber = Number(args[2])
+    const secondNumber = Number(args[3])
     //los dos numeros de la multiplicacion que se pasan como argumentos son string, se deben volver números
 
     if(!isNaN(firstNumber) && !isNaN(secondNumber)){
@@ -27,4 +27,4 @@ const cleanArguments = parseArguments(process.argv)
 const a: number = Number(cleanArguments[0])
 const b: number = Number(cleanArguments[1])
 
-multiplicator(a, b, 'a * b is equal to: ')
+multiplicator(a, b, `${a} * ${b} is equal to: `)
